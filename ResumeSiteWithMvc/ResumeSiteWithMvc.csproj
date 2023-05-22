@@ -1,0 +1,437 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A3F9C493-49D7-4449-A103-7C330BEF53B3}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ResumeSiteWithMvc</RootNamespace>
+    <AssemblyName>ResumeSiteWithMvc</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44344</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TypeScriptToolsVersion>4.3</TypeScriptToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\adminGirisController.cs" />
+    <Compile Include="Controllers\adminPanelAnasayfaController.cs" />
+    <Compile Include="Controllers\AnaSayfaController.cs" />
+    <Compile Include="Controllers\deneyimController.cs" />
+    <Compile Include="Controllers\egitimController.cs" />
+    <Compile Include="Controllers\hakkimdaController.cs" />
+    <Compile Include="Controllers\hobiController.cs" />
+    <Compile Include="Controllers\iletisimController.cs" />
+    <Compile Include="Controllers\projelerController.cs" />
+    <Compile Include="Controllers\sosyalMedyaController.cs" />
+    <Compile Include="Controllers\yetkinlikController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\entity\Model1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\entity\Model1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\entity\Model1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\entity\tblAdminGiris.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\entity\tblDeneyimlerim.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\entity\tblEğitimleri.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\entity\tblFramework.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\entity\tblHakkimda.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\entity\tblHobilerim.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\entity\tblIde.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\entity\tblIletisim.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\entity\tblProgramlamaDilleri.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\entity\tblProjeler.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\entity\tblSocialMedia.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\entity\tblVeriTabani.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\entity\ViewModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="repositories\DeneyimRepository.cs" />
+    <Compile Include="repositories\EgitimRepository.cs" />
+    <Compile Include="repositories\genericRepository.cs" />
+    <Compile Include="repositories\HakkimdaRepository.cs" />
+    <Compile Include="repositories\HobiRepository.cs" />
+    <Compile Include="repositories\IletisimRepository.cs" />
+    <Compile Include="repositories\ProgramlamaDilleriRepository.cs" />
+    <Compile Include="repositories\ProjelerRepository.cs" />
+    <Compile Include="repositories\sosyalMedyaRepository.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AdminLTE-3.0.4\dist\css\adminlte.css" />
+    <Content Include="AdminLTE-3.0.4\dist\css\adminlte.min.css" />
+    <Content Include="AdminLTE-3.0.4\dist\css\alt\adminlte.components.css" />
+    <Content Include="AdminLTE-3.0.4\dist\css\alt\adminlte.components.min.css" />
+    <Content Include="AdminLTE-3.0.4\dist\css\alt\adminlte.core.css" />
+    <Content Include="AdminLTE-3.0.4\dist\css\alt\adminlte.core.min.css" />
+    <Content Include="AdminLTE-3.0.4\dist\css\alt\adminlte.extra-components.css" />
+    <Content Include="AdminLTE-3.0.4\dist\css\alt\adminlte.extra-components.min.css" />
+    <Content Include="AdminLTE-3.0.4\dist\css\alt\adminlte.pages.css" />
+    <Content Include="AdminLTE-3.0.4\dist\css\alt\adminlte.pages.min.css" />
+    <Content Include="AdminLTE-3.0.4\dist\css\alt\adminlte.plugins.css" />
+    <Content Include="AdminLTE-3.0.4\dist\css\alt\adminlte.plugins.min.css" />
+    <Content Include="AdminLTE-3.0.4\dist\img\2.png" />
+    <Content Include="AdminLTE-3.0.4\dist\img\4.png" />
+    <Content Include="AdminLTE-3.0.4\dist\img\AdminLTELogo.png" />
+    <Content Include="AdminLTE-3.0.4\dist\img\avatar.png" />
+    <Content Include="AdminLTE-3.0.4\dist\img\avatar04.png" />
+    <Content Include="AdminLTE-3.0.4\dist\img\avatar2.png" />
+    <Content Include="AdminLTE-3.0.4\dist\img\avatar3.png" />
+    <Content Include="AdminLTE-3.0.4\dist\img\avatar5.png" />
+    <Content Include="AdminLTE-3.0.4\dist\img\boxed-bg.jpg" />
+    <Content Include="AdminLTE-3.0.4\dist\img\boxed-bg.png" />
+    <Content Include="AdminLTE-3.0.4\dist\img\credit\american-express.png" />
+    <Content Include="AdminLTE-3.0.4\dist\img\credit\cirrus.png" />
+    <Content Include="AdminLTE-3.0.4\dist\img\credit\mastercard.png" />
+    <Content Include="AdminLTE-3.0.4\dist\img\credit\mestro.png" />
+    <Content Include="AdminLTE-3.0.4\dist\img\credit\paypal.png" />
+    <Content Include="AdminLTE-3.0.4\dist\img\credit\paypal2.png" />
+    <Content Include="AdminLTE-3.0.4\dist\img\credit\visa.png" />
+    <Content Include="AdminLTE-3.0.4\dist\img\default-150x150.png" />
+    <Content Include="AdminLTE-3.0.4\dist\img\icons.png" />
+    <Content Include="AdminLTE-3.0.4\dist\img\photo1.png" />
+    <Content Include="AdminLTE-3.0.4\dist\img\photo2.png" />
+    <Content Include="AdminLTE-3.0.4\dist\img\photo3.jpg" />
+    <Content Include="AdminLTE-3.0.4\dist\img\photo4.jpg" />
+    <Content Include="AdminLTE-3.0.4\dist\img\prod-1.jpg" />
+    <Content Include="AdminLTE-3.0.4\dist\img\prod-2.jpg" />
+    <Content Include="AdminLTE-3.0.4\dist\img\prod-3.jpg" />
+    <Content Include="AdminLTE-3.0.4\dist\img\prod-4.jpg" />
+    <Content Include="AdminLTE-3.0.4\dist\img\prod-5.jpg" />
+    <Content Include="AdminLTE-3.0.4\dist\img\user1-128x128.jpg" />
+    <Content Include="AdminLTE-3.0.4\dist\img\user2-160x160.jpg" />
+    <Content Include="AdminLTE-3.0.4\dist\img\user3-128x128.jpg" />
+    <Content Include="AdminLTE-3.0.4\dist\img\user4-128x128.jpg" />
+    <Content Include="AdminLTE-3.0.4\dist\img\user5-128x128.jpg" />
+    <Content Include="AdminLTE-3.0.4\dist\img\user6-128x128.jpg" />
+    <Content Include="AdminLTE-3.0.4\dist\img\user7-128x128.jpg" />
+    <Content Include="AdminLTE-3.0.4\dist\img\user8-128x128.jpg" />
+    <Content Include="AdminLTE-3.0.4\dist\js\adminlte.js" />
+    <Content Include="AdminLTE-3.0.4\dist\js\adminlte.min.js" />
+    <Content Include="AdminLTE-3.0.4\dist\js\demo.js" />
+    <Content Include="AdminLTE-3.0.4\dist\js\pages\dashboard.js" />
+    <Content Include="AdminLTE-3.0.4\dist\js\pages\dashboard2.js" />
+    <Content Include="AdminLTE-3.0.4\dist\js\pages\dashboard3.js" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="girisCss\fontAwesome.css" />
+    <Content Include="girisCss\girisYapCss.css" />
+    <Content Include="girisCss\pexels-photo-2847648.jpg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Models\entity\Model1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\entity\Model1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
+    </Content>
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="tema\assets\img\favicon.ico" />
+    <Content Include="tema\assets\img\profile.jpg" />
+    <Content Include="tema\assets\img\unnamed.png" />
+    <Content Include="tema\css\styles.css" />
+    <Content Include="tema\index.html" />
+    <Content Include="tema\js\scripts.js" />
+    <EntityDeploy Include="Models\entity\Model1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\entity\Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Content>
+    <Content Include="AdminLTE-3.0.4\dist\css\adminlte.css.map" />
+    <Content Include="AdminLTE-3.0.4\dist\css\adminlte.min.css.map" />
+    <Content Include="AdminLTE-3.0.4\dist\css\alt\adminlte.components.css.map" />
+    <Content Include="AdminLTE-3.0.4\dist\css\alt\adminlte.components.min.css.map" />
+    <Content Include="AdminLTE-3.0.4\dist\css\alt\adminlte.core.css.map" />
+    <Content Include="AdminLTE-3.0.4\dist\css\alt\adminlte.core.min.css.map" />
+    <Content Include="AdminLTE-3.0.4\dist\css\alt\adminlte.extra-components.css.map" />
+    <Content Include="AdminLTE-3.0.4\dist\css\alt\adminlte.extra-components.min.css.map" />
+    <Content Include="AdminLTE-3.0.4\dist\css\alt\adminlte.pages.css.map" />
+    <Content Include="AdminLTE-3.0.4\dist\css\alt\adminlte.pages.min.css.map" />
+    <Content Include="AdminLTE-3.0.4\dist\css\alt\adminlte.plugins.css.map" />
+    <Content Include="AdminLTE-3.0.4\dist\css\alt\adminlte.plugins.min.css.map" />
+    <Content Include="AdminLTE-3.0.4\dist\js\adminlte.js.map" />
+    <Content Include="AdminLTE-3.0.4\dist\js\adminlte.min.js.map" />
+    <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.4.1.js" />
+    <Content Include="Scripts\jquery-3.4.1.min.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\AnaSayfa\Index.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\AnaSayfa\deneyimlerim.cshtml" />
+    <Content Include="Views\AnaSayfa\egitimlerim.cshtml" />
+    <Content Include="Views\AnaSayfa\hobilerim.cshtml" />
+    <Content Include="Views\AnaSayfa\iletisim.cshtml" />
+    <Content Include="Views\Shared\_adminLayout.cshtml" />
+    <Content Include="Views\deneyim\Index.cshtml" />
+    <Content Include="Views\deneyim\deneyimEkle.cshtml" />
+    <Content Include="Views\deneyim\deneyimGuncellemeSayfasi.cshtml" />
+    <Content Include="Views\egitim\Index.cshtml" />
+    <Content Include="Views\egitim\egitimEkle.cshtml" />
+    <Content Include="Views\egitim\egitimGuncellemeSayfasi.cshtml" />
+    <Content Include="Views\hobi\Index.cshtml" />
+    <Content Include="Views\hobi\hobiEkle.cshtml" />
+    <Content Include="Views\hobi\hobiGuncellemeSayfasi.cshtml" />
+    <Content Include="Views\AnaSayfa\socialMedia.cshtml" />
+    <Content Include="Views\sosyalMedya\Index.cshtml" />
+    <Content Include="Views\sosyalMedya\sosyalMedyaEkle.cshtml" />
+    <Content Include="Views\sosyalMedya\sosyalMedyaGuncellemeSayfasi.cshtml" />
+    <Content Include="Views\hakkimda\Index.cshtml" />
+    <Content Include="Views\hakkimda\hakkimdaEkle.cshtml" />
+    <Content Include="Views\hakkimda\hakkimdaGuncellemeSayfasi.cshtml" />
+    <Content Include="Views\iletisim\Index.cshtml" />
+    <Content Include="Views\AnaSayfa\projeler.cshtml" />
+    <Content Include="Views\projeler\Index.cshtml" />
+    <Content Include="Views\projeler\projeEkle.cshtml" />
+    <Content Include="Views\projeler\projeGuncellemeSayfasi.cshtml" />
+    <Content Include="Views\AnaSayfa\yetkinliklerim.cshtml" />
+    <Content Include="Views\yetkinlik\Index.cshtml" />
+    <Content Include="Views\yetkinlik\programlamaEkle.cshtml" />
+    <Content Include="Views\yetkinlik\veriTabaniEkle.cshtml" />
+    <Content Include="Views\yetkinlik\ıdeEkle.cshtml" />
+    <Content Include="Views\yetkinlik\frameworkEkle.cshtml" />
+    <Content Include="Views\yetkinlik\programlamaGuncellemeSayfasi.cshtml" />
+    <Content Include="Views\yetkinlik\veriTabaniGuncellemeSayfasi.cshtml" />
+    <Content Include="Views\yetkinlik\ıdeGuncellemeSayfasi.cshtml" />
+    <Content Include="Views\yetkinlik\frameworkGuncellemeSayfasi.cshtml" />
+    <Content Include="Views\adminPanelAnasayfa\Index.cshtml" />
+    <Content Include="Views\adminGiris\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>50738</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44344/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

@@ -1,0 +1,20 @@
+﻿@model ResumeSiteWithMvc.Models.entity.tblIde
+@{
+    ViewBag.Title = "ıdeEkle";
+    Layout = "~/Views/Shared/_adminLayout.cshtml";
+}
+
+<h2>ıde Ekle</h2>
+
+@using (Html.BeginForm("ıdeEkle", "yetkinlik", FormMethod.Post))
+{
+    <div class="form-group">
+        <label>ıde Giriniz</label>
+        @Html.TextBoxFor(i => i.ide, new { @class = "form-control" })
+        @Html.ValidationMessageFor(i => i.ide, "", new { @style = "color:red;" })
+    </div>
+    <button class="btn btn-primary">Ide Ekle</button>
+    @Html.HiddenFor(i => i.id)
+}
+
+

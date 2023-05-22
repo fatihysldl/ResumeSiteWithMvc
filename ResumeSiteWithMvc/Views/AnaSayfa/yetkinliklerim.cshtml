@@ -1,0 +1,61 @@
+﻿@using ResumeSiteWithMvc.Models.entity
+@model ViewModel
+@{
+    Layout = null;
+}
+
+<div class="resume-section-content">
+    <h2 class="mb-5">Skills</h2>
+
+    @*<ul class="list-inline dev-icons">
+            @foreach (var i in Model)
+            {
+                <li class="list-inline-item"><i class="@i.iconLink"></i></li>
+            }
+        </ul>*@
+
+    <div class="subheading mb-3">Deneyimlediğim Programlama Dilleri</div>
+    @foreach (var i in Model.programlamaDilleri)
+    {
+        <ul class="fa-ul mb-0">
+            <li>
+                <span class="fa-li"><i class="fas fa-check"></i></span>
+                @i.programlamaDilleri
+            </li>
+        </ul>
+    }
+
+    <div class="subheading mb-3">Deneyimlediğim Frameworkler</div>
+    @foreach (var i in Model.frameworkler)
+    {
+        <ul class="fa-ul mb-0">
+            <li>
+                <span class="fa-li"><i class="fas fa-check"></i></span>
+                @i.framework
+            </li>
+        </ul>
+    }
+    <div class="subheading mb-3">Deneyimlediğim Veri Tabanı Yönetim Sistemleri</div>
+    @foreach (var i in Model.VeriTabaniYonetimSistemleri)
+    {
+        <ul class="fa-ul mb-0">
+            <li>
+                <span class="fa-li"><i class="fas fa-check"></i></span>
+                @i.VeriTabanıSistemi
+            </li>
+        </ul>
+    }
+    <div class="subheading mb-3">Deneyimlediğim Ideler</div>
+    @foreach (var i in Model.Ideler)
+    {
+        <ul class="fa-ul mb-0">
+            <li>
+                <span class="fa-li"><i class="fas fa-check"></i></span>
+                @i.ide
+            </li>
+        </ul>
+    }
+
+
+
+</div>

@@ -1,0 +1,19 @@
+﻿@model ResumeSiteWithMvc.Models.entity.tblProgramlamaDilleri
+@{
+    ViewBag.Title = "programlamaGuncellemeSayfasi";
+    Layout = "~/Views/Shared/_adminLayout.cshtml";
+}
+
+<h2>programlama Guncelleme Sayfasi</h2>
+
+
+@using (Html.BeginForm("programlamaGuncellemeSayfasi", "yetkinlik", FormMethod.Post))
+{
+    <div class="form-group">
+        <label>Programlama Dili Giriniz</label>
+        @Html.TextBoxFor(i => i.programlamaDilleri, new { @class = "form-control" })
+    </div>
+    <button class="btn btn-primary">Programlama Ekle</button>
+    @Html.HiddenFor(i => i.ıd)
+
+}

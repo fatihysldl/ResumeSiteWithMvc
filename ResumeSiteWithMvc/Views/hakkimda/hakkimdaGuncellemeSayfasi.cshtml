@@ -1,0 +1,44 @@
+﻿@model ResumeSiteWithMvc.Models.entity.tblHakkimda
+
+@{
+    ViewBag.Title = "hakkimdaGuncellemeSayfasi";
+    Layout = "~/Views/Shared/_adminLayout.cshtml";
+}
+
+<h2>HakkImda Güncelleme Sayfası</h2>
+
+@using (Html.BeginForm("hakkimdaGuncellemeSayfasi", "hakkimda", FormMethod.Post))
+{
+    <div>
+        <label>Ad</label>
+        @Html.TextBoxFor(i => i.ad, new { @class = "form-control" })
+    </div>
+    <div>
+        <label>Soyad</label>
+        @Html.TextBoxFor(i => i.soyad, new { @class = "form-control" })
+    </div>
+    <div>
+        <label>Adres</label>
+        @Html.TextBoxFor(i => i.adres, new { @class = "form-control" })
+    </div>
+    <div>
+        <label>Telefon</label>
+        @Html.TextBoxFor(i => i.telefon, new { @class = "form-control" })
+    </div>
+    <div>
+        <label>Mail</label>
+        @Html.TextBoxFor(i => i.mail, new { @class = "form-control" })
+    </div>
+    <div>
+        <label>Açıklama</label>
+        @Html.TextBoxFor(i => i.aciklama, new { @class = "form-control" })
+    </div>
+    <div>
+        <label>Fotoğraf</label>
+        @Html.TextBoxFor(i => i.fotograf, new { @class = "form-control" })
+    </div>
+    <button class="btn btn-primary">Hakkımda Güncelle</button>
+    @Html.HiddenFor(i => i.Id)
+}
+
+

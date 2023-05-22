@@ -1,0 +1,20 @@
+﻿@model ResumeSiteWithMvc.Models.entity.tblFramework
+@{
+    ViewBag.Title = "frameworkEkle";
+    Layout = "~/Views/Shared/_adminLayout.cshtml";
+}
+
+<h2>framework Ekle</h2>
+
+@using (Html.BeginForm("frameworkEkle", "yetkinlik", FormMethod.Post))
+{
+    <div class="form-group">
+        <label>framework Giriniz</label>
+        @Html.TextBoxFor(i => i.framework, new { @class = "form-control" })
+        @Html.ValidationMessageFor(i => i.framework, "", new { @style = "color:red;" })
+    </div>
+    <button class="btn btn-primary">Framework Ekle</button>
+    @Html.HiddenFor(i => i.id)
+
+}
+

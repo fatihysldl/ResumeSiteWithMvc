@@ -1,0 +1,13 @@
+﻿@using ResumeSiteWithMvc.Models.entity
+@model List<tblSocialMedia>
+@{
+    Layout = null;
+}
+
+<div class="social-icons">
+    @foreach (var i in Model)
+    {
+        <a class="social-icon" href="@i.sosyalMedyaLink"><i class="@i.iconLink"></i></a>
+    }
+</div>
+

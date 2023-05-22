@@ -1,0 +1,390 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="resumeModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="tblAdminGiris">
+          <Key>
+            <PropertyRef Name="adminId" />
+          </Key>
+          <Property Name="adminId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="adminKullaniciAdi" Type="varchar" MaxLength="50" />
+          <Property Name="adminSifre" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tblDeneyimlerim">
+          <Key>
+            <PropertyRef Name="ıd" />
+          </Key>
+          <Property Name="ıd" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="baslik" Type="varchar" MaxLength="50" />
+          <Property Name="altBaslik" Type="varchar" MaxLength="50" />
+          <Property Name="aciklama" Type="varchar(max)" />
+          <Property Name="tarih" Type="varchar" MaxLength="80" />
+        </EntityType>
+        <EntityType Name="tblEğitimleri">
+          <Key>
+            <PropertyRef Name="ıd" />
+          </Key>
+          <Property Name="ıd" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="baslik" Type="varchar" MaxLength="50" />
+          <Property Name="altBaslik" Type="varchar" MaxLength="100" />
+          <Property Name="altBaslik1" Type="varchar" MaxLength="100" />
+          <Property Name="notOrtalamasi" Type="varchar" MaxLength="10" />
+          <Property Name="tarih" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tblFramework">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="framework" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tblHakkimda">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ad" Type="varchar" MaxLength="50" />
+          <Property Name="soyad" Type="varchar" MaxLength="50" />
+          <Property Name="adres" Type="varchar" MaxLength="100" />
+          <Property Name="telefon" Type="varchar" MaxLength="30" />
+          <Property Name="mail" Type="varchar" MaxLength="150" />
+          <Property Name="aciklama" Type="varchar(max)" />
+          <Property Name="fotograf" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="tblHobilerim">
+          <Key>
+            <PropertyRef Name="ıd" />
+          </Key>
+          <Property Name="ıd" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="hobi" Type="varchar(max)" />
+        </EntityType>
+        <EntityType Name="tblIde">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ide" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tblIletisim">
+          <Key>
+            <PropertyRef Name="ıd" />
+          </Key>
+          <Property Name="ıd" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="gonderenAdSoyad" Type="varchar" MaxLength="50" />
+          <Property Name="mail" Type="varchar" MaxLength="100" />
+          <Property Name="konu" Type="varchar" MaxLength="100" />
+          <Property Name="mesaj" Type="varchar" MaxLength="1000" />
+        </EntityType>
+        <EntityType Name="tblProgramlamaDilleri">
+          <Key>
+            <PropertyRef Name="ıd" />
+          </Key>
+          <Property Name="ıd" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="programlamaDilleri" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tblProjeler">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Proje" Type="varchar(max)" />
+        </EntityType>
+        <EntityType Name="tblSocialMedia">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="sosyalMedyaAd" Type="varchar" MaxLength="30" />
+          <Property Name="sosyalMedyaLink" Type="varchar" MaxLength="70" />
+          <Property Name="iconLink" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tblVeriTabani">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="VeriTabanıSistemi" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityContainer Name="resumeModelStoreContainer">
+          <EntitySet Name="tblAdminGiris" EntityType="Self.tblAdminGiris" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblDeneyimlerim" EntityType="Self.tblDeneyimlerim" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblEğitimleri" EntityType="Self.tblEğitimleri" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblFramework" EntityType="Self.tblFramework" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblHakkimda" EntityType="Self.tblHakkimda" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblHobilerim" EntityType="Self.tblHobilerim" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblIde" EntityType="Self.tblIde" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblIletisim" EntityType="Self.tblIletisim" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblProgramlamaDilleri" EntityType="Self.tblProgramlamaDilleri" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblProjeler" EntityType="Self.tblProjeler" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblSocialMedia" EntityType="Self.tblSocialMedia" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblVeriTabani" EntityType="Self.tblVeriTabani" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="resumeModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="tblDeneyimlerim">
+          <Key>
+            <PropertyRef Name="ıd" />
+          </Key>
+          <Property Name="ıd" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="baslik" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="altBaslik" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="aciklama" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="tarih" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tblEğitimleri">
+          <Key>
+            <PropertyRef Name="ıd" />
+          </Key>
+          <Property Name="ıd" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="baslik" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="altBaslik" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="altBaslik1" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="notOrtalamasi" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="tarih" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tblHakkimda">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="soyad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="adres" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="telefon" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="mail" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="aciklama" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="fotograf" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tblHobilerim">
+          <Key>
+            <PropertyRef Name="ıd" />
+          </Key>
+          <Property Name="ıd" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="hobi" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tblIletisim">
+          <Key>
+            <PropertyRef Name="ıd" />
+          </Key>
+          <Property Name="ıd" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="gonderenAdSoyad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="mail" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="konu" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="mesaj" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="resumeEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="tblDeneyimlerim" EntityType="Self.tblDeneyimlerim" />
+          <EntitySet Name="tblEğitimleri" EntityType="Self.tblEğitimleri" />
+          <EntitySet Name="tblHakkimda" EntityType="Self.tblHakkimda" />
+          <EntitySet Name="tblHobilerim" EntityType="Self.tblHobilerim" />
+          <EntitySet Name="tblIletisim" EntityType="Self.tblIletisim" />
+          <EntitySet Name="tblSocialMedia" EntityType="resumeModel.tblSocialMedia" />
+          <EntitySet Name="tblProjeler" EntityType="resumeModel.tblProjeler" />
+          <EntitySet Name="tblFramework" EntityType="resumeModel.tblFramework" />
+          <EntitySet Name="tblIde" EntityType="resumeModel.tblIde" />
+          <EntitySet Name="tblProgramlamaDilleri" EntityType="resumeModel.tblProgramlamaDilleri" />
+          <EntitySet Name="tblVeriTabani" EntityType="resumeModel.tblVeriTabani" />
+          <EntitySet Name="tblAdminGiris" EntityType="resumeModel.tblAdminGiris" />
+        </EntityContainer>
+        <EntityType Name="tblSocialMedia">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="sosyalMedyaLink" Type="String" MaxLength="70" FixedLength="false" Unicode="false" />
+          <Property Name="iconLink" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="sosyalMedyaAd" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tblProjeler">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Proje" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tblFramework">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="framework" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tblIde">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ide" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tblProgramlamaDilleri">
+          <Key>
+            <PropertyRef Name="ıd" />
+          </Key>
+          <Property Name="ıd" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="programlamaDilleri" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tblVeriTabani">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="VeriTabanıSistemi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tblAdminGiris">
+          <Key>
+            <PropertyRef Name="adminId" />
+          </Key>
+          <Property Name="adminId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="adminKullaniciAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="adminSifre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="resumeModelStoreContainer" CdmEntityContainer="resumeEntities1">
+          <EntitySetMapping Name="tblDeneyimlerim">
+            <EntityTypeMapping TypeName="resumeModel.tblDeneyimlerim">
+              <MappingFragment StoreEntitySet="tblDeneyimlerim">
+                <ScalarProperty Name="ıd" ColumnName="ıd" />
+                <ScalarProperty Name="baslik" ColumnName="baslik" />
+                <ScalarProperty Name="altBaslik" ColumnName="altBaslik" />
+                <ScalarProperty Name="aciklama" ColumnName="aciklama" />
+                <ScalarProperty Name="tarih" ColumnName="tarih" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblEğitimleri">
+            <EntityTypeMapping TypeName="resumeModel.tblEğitimleri">
+              <MappingFragment StoreEntitySet="tblEğitimleri">
+                <ScalarProperty Name="ıd" ColumnName="ıd" />
+                <ScalarProperty Name="baslik" ColumnName="baslik" />
+                <ScalarProperty Name="altBaslik" ColumnName="altBaslik" />
+                <ScalarProperty Name="altBaslik1" ColumnName="altBaslik1" />
+                <ScalarProperty Name="notOrtalamasi" ColumnName="notOrtalamasi" />
+                <ScalarProperty Name="tarih" ColumnName="tarih" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblHakkimda">
+            <EntityTypeMapping TypeName="resumeModel.tblHakkimda">
+              <MappingFragment StoreEntitySet="tblHakkimda">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="ad" ColumnName="ad" />
+                <ScalarProperty Name="soyad" ColumnName="soyad" />
+                <ScalarProperty Name="adres" ColumnName="adres" />
+                <ScalarProperty Name="telefon" ColumnName="telefon" />
+                <ScalarProperty Name="mail" ColumnName="mail" />
+                <ScalarProperty Name="aciklama" ColumnName="aciklama" />
+                <ScalarProperty Name="fotograf" ColumnName="fotograf" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblHobilerim">
+            <EntityTypeMapping TypeName="resumeModel.tblHobilerim">
+              <MappingFragment StoreEntitySet="tblHobilerim">
+                <ScalarProperty Name="hobi" ColumnName="hobi" />
+                <ScalarProperty Name="ıd" ColumnName="ıd" />
+                </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblIletisim">
+            <EntityTypeMapping TypeName="resumeModel.tblIletisim">
+              <MappingFragment StoreEntitySet="tblIletisim">
+                <ScalarProperty Name="ıd" ColumnName="ıd" />
+                <ScalarProperty Name="gonderenAdSoyad" ColumnName="gonderenAdSoyad" />
+                <ScalarProperty Name="mail" ColumnName="mail" />
+                <ScalarProperty Name="konu" ColumnName="konu" />
+                <ScalarProperty Name="mesaj" ColumnName="mesaj" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblSocialMedia">
+            <EntityTypeMapping TypeName="resumeModel.tblSocialMedia">
+              <MappingFragment StoreEntitySet="tblSocialMedia">
+                <ScalarProperty Name="sosyalMedyaAd" ColumnName="sosyalMedyaAd" />
+                <ScalarProperty Name="iconLink" ColumnName="iconLink" />
+                <ScalarProperty Name="sosyalMedyaLink" ColumnName="sosyalMedyaLink" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblProjeler">
+            <EntityTypeMapping TypeName="resumeModel.tblProjeler">
+              <MappingFragment StoreEntitySet="tblProjeler">
+                <ScalarProperty Name="Proje" ColumnName="Proje" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblFramework">
+            <EntityTypeMapping TypeName="resumeModel.tblFramework">
+              <MappingFragment StoreEntitySet="tblFramework">
+                <ScalarProperty Name="framework" ColumnName="framework" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblIde">
+            <EntityTypeMapping TypeName="resumeModel.tblIde">
+              <MappingFragment StoreEntitySet="tblIde">
+                <ScalarProperty Name="ide" ColumnName="ide" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblProgramlamaDilleri">
+            <EntityTypeMapping TypeName="resumeModel.tblProgramlamaDilleri">
+              <MappingFragment StoreEntitySet="tblProgramlamaDilleri">
+                <ScalarProperty Name="programlamaDilleri" ColumnName="programlamaDilleri" />
+                <ScalarProperty Name="ıd" ColumnName="ıd" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblVeriTabani">
+            <EntityTypeMapping TypeName="resumeModel.tblVeriTabani">
+              <MappingFragment StoreEntitySet="tblVeriTabani">
+                <ScalarProperty Name="VeriTabanıSistemi" ColumnName="VeriTabanıSistemi" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblAdminGiris">
+            <EntityTypeMapping TypeName="resumeModel.tblAdminGiris">
+              <MappingFragment StoreEntitySet="tblAdminGiris">
+                <ScalarProperty Name="adminSifre" ColumnName="adminSifre" />
+                <ScalarProperty Name="adminKullaniciAdi" ColumnName="adminKullaniciAdi" />
+                <ScalarProperty Name="adminId" ColumnName="adminId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

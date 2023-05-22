@@ -1,0 +1,32 @@
+﻿@using ResumeSiteWithMvc.Models.entity
+@model List<tblProjeler>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_adminLayout.cshtml";
+}
+
+<h2>Projeler</h2>
+
+<table class="table table-bordered">
+    <tr>
+        <th>Id</th>
+        <th>Proje</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+    </tr>
+
+    <tbody>
+        @foreach (var i in Model)
+        {
+            <tr>
+                <td>@i.id</td>
+                <td>@i.Proje</td>
+                <td><a href="/projeler/projeSil/@i.id" class="btn btn-warning">Sil</a></td>
+                <td><a href="/projeler/projeGuncellemeSayfasi/@i.id" class="btn btn-success">Güncelle</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a href="/projeler/projeEkle" class="btn btn-primary">Proje Ekle</a>
+

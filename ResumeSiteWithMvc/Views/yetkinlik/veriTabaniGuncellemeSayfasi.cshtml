@@ -1,0 +1,19 @@
+﻿@model ResumeSiteWithMvc.Models.entity.tblVeriTabani
+@{
+    ViewBag.Title = "veriTabaniGuncellemeSayfasi";
+    Layout = "~/Views/Shared/_adminLayout.cshtml";
+}
+
+<h2>veri Tabani Guncelleme Sayfasi</h2>
+
+@using (Html.BeginForm("veriTabaniGuncellemeSayfasi", "yetkinlik", FormMethod.Post))
+{
+    <div class="form-group">
+        <label>veri Tabanı Giriniz</label>
+        @Html.TextBoxFor(i => i.VeriTabanıSistemi, new { @class = "form-control" })
+    </div>
+    <button class="bnt btn-primary">Veri Tabanı Ekle</button>
+    @Html.HiddenFor(i => i.id)
+
+}
+}

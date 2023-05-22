@@ -1,0 +1,20 @@
+﻿@model ResumeSiteWithMvc.Models.entity.tblProjeler
+@{
+    ViewBag.Title = "projeGuncellemeSayfasi";
+    Layout = "~/Views/Shared/_adminLayout.cshtml";
+}
+
+<h2>projeGuncellemeSayfasi</h2>
+
+
+@using (Html.BeginForm("projeGuncellemeSayfasi", "projeler", FormMethod.Post))
+{
+    <div class="form-group">
+        <label>Proje Giriniz</label>
+        @Html.TextBoxFor(i => i.Proje, new { @class = "form-control" })
+    </div>
+    <button class="btn btn-primary">Proje Güncelle</button>
+    @Html.HiddenFor(i => i.id)
+
+}
+

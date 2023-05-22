@@ -1,0 +1,22 @@
+﻿@model ResumeSiteWithMvc.Models.entity.tblVeriTabani
+
+@{
+    ViewBag.Title = "veriTabaniEkle";
+    Layout = "~/Views/Shared/_adminLayout.cshtml";
+}
+
+<h2>veri Tabanı Ekle</h2>
+
+@using (Html.BeginForm("veriTabaniEkle", "yetkinlik", FormMethod.Post))
+{
+    <div class="form-group">
+        <label>veri Tabanı Giriniz</label>
+        @Html.TextBoxFor(i => i.VeriTabanıSistemi, new { @class = "form-control" })
+        @Html.ValidationMessageFor(i => i.VeriTabanıSistemi, "", new { @style = "color:red;" })
+    </div>
+    <button class="btn btn-primary">Veri Tabanı Ekle</button>
+    @Html.HiddenFor(i => i.id)
+
+}
+
+

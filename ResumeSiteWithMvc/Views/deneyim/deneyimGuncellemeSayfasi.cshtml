@@ -1,0 +1,31 @@
+﻿@model ResumeSiteWithMvc.Models.entity.tblDeneyimlerim
+@{
+    ViewBag.Title = "deneyimGuncellemeSayfasi";
+    Layout = "~/Views/Shared/_adminLayout.cshtml";
+}
+
+<h2>Deneyim Güncelle</h2>
+
+
+@using (Html.BeginForm("deneyimGuncellemeSayfasi", "deneyim", FormMethod.Post))
+{
+    <div>
+        <label>Başlık</label>
+        @Html.TextBoxFor(i => i.baslik, new { @class = "form-control" })
+    </div>
+    <div>
+        <label>Alt Başlık</label>
+        @Html.TextBoxFor(i => i.altBaslik, new { @class = "form-control" })
+    </div>
+    <div>
+        <label>Açıklma</label>
+        @Html.TextBoxFor(i => i.aciklama, new { @class = "form-control" })
+    </div>
+    <div>
+        <label>Tarih</label>
+        @Html.TextBoxFor(i => i.tarih, new { @class = "form-control" })
+    </div>
+    <br />
+    <button class="btn btn-primary">Deneyim Güncelle</button>
+    @Html.HiddenFor(i => i.ıd)
+}

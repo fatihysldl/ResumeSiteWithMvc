@@ -1,0 +1,24 @@
+﻿@using ResumeSiteWithMvc.Models.entity
+@model List<tblEğitimleri>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<div class="resume-section-content">
+    <h2 class="mb-5">Eğitimlerim</h2>
+    @foreach (var i in Model)
+    {
+        <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+            <div class="flex-grow-1">
+                <h3 class="mb-0">@i.baslik</h3>
+                <div class="subheading mb-3">@i.altBaslik</div>
+                <div>Alan: @i.altBaslik1</div>
+                <p>Genel Not Ortalaması : @i.notOrtalamasi</p>
+            </div>
+            <div class="flex-shrink-0"><span class="text-primary">@i.tarih</span></div>
+        </div>
+    }
+
+</div>

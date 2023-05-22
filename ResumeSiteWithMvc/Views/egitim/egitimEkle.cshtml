@@ -1,0 +1,37 @@
+﻿@model ResumeSiteWithMvc.Models.entity.tblEğitimleri
+@{
+    ViewBag.Title = "egitimEkle";
+    Layout = "~/Views/Shared/_adminLayout.cshtml";
+}
+
+<h2>egitimEkle</h2>
+
+@using (Html.BeginForm("egitimEkle", "egitim", FormMethod.Post))
+{
+    <div>
+        <label>Başlık</label>
+        @Html.TextBoxFor(i => i.baslik, new { @class = "form-control" })
+        @Html.ValidationMessageFor(i => i.baslik, "", new { @style = "color:red;" })
+    </div>
+    <div>
+        <label>Alt Başlık</label>
+        @Html.TextBoxFor(i => i.altBaslik, new { @class = "form-control" })
+        @Html.ValidationMessageFor(i => i.altBaslik, "", new { @style = "color:red;" })
+    </div>
+    <div>
+        <label>Alt Başlık 1</label>
+        @Html.TextBoxFor(i => i.altBaslik1, new { @class = "form-control" })
+        @Html.ValidationMessageFor(i => i.altBaslik1, "", new { @style = "color:red;" })
+    </div>
+    <div>
+        <label>Not Ortalması</label>
+        @Html.TextBoxFor(i => i.notOrtalamasi, new { @class = "form-control" })
+        @Html.ValidationMessageFor(i => i.notOrtalamasi, "", new { @style = "color:red;" })
+    </div>
+    <div>
+        <label>Tarih</label>
+        @Html.TextBoxFor(i => i.tarih, new { @class = "form-control" })
+    </div>
+    <button class="btn btn-primary">Eğitim Ekle</button>
+    @Html.HiddenFor(i => i.ıd)
+}

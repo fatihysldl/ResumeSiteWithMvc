@@ -1,0 +1,20 @@
+﻿@model ResumeSiteWithMvc.Models.entity.tblProjeler
+@{
+    ViewBag.Title = "projeEkle";
+    Layout = "~/Views/Shared/_adminLayout.cshtml";
+}
+
+<h2>projeEkle</h2>
+
+@using (Html.BeginForm("projeEkle", "projeler", FormMethod.Post))
+{
+    <div class="form-group">
+        <label>Proje Giriniz</label>
+        @Html.TextBoxFor(i => i.Proje, new { @class = "form-control" })
+        @Html.ValidationMessageFor(i => i.Proje, "", new { @style = "color:red;" })
+    </div>
+    <button class="btn btn-primary">Proje Ekle</button>
+    @Html.HiddenFor(i => i.id)
+
+}
+

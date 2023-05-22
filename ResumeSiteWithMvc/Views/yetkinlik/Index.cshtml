@@ -1,0 +1,113 @@
+﻿@using ResumeSiteWithMvc.Models.entity
+@model  ViewModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_adminLayout.cshtml";
+}
+
+<h3>Deneyimlediğim Programlama Dilleri</h3>
+
+
+<table class="table table-bordered ">
+    <tr>
+        <th>Id</th>
+        <th>Yetkinlik</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+
+    </tr>
+
+    <tbody>
+        @foreach (var i in Model.programlamaDilleri)
+        {
+            <tr>
+                <td>@i.ıd</td>
+                <td>@i.programlamaDilleri</td>
+                <td><a href="/yetkinlik/programlamaSil/@i.ıd" class="btn btn-warning">Sil</a></td>
+                <td><a href="/yetkinlik/programlamaGuncellemeSayfasi/@i.ıd" class="btn btn-success">Güncelle</a></td>
+
+            </tr>
+        }
+    </tbody>
+</table>
+<a href="/yetkinlik/programlamaEkle" class="btn btn-success">Programlama Dili Ekle</a>
+
+
+@*IDELER*@
+<h3>Deneyimlediğim IDELER</h3>
+<table class="table table-bordered">
+    <tr>
+        <th>Id</th>
+        <th>Yetkinlik</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+
+    </tr>
+
+    <tbody>
+        @foreach (var i in Model.Ideler)
+        {
+            <tr>
+                <td>@i.id</td>
+                <td>@i.ide</td>
+                <td><a href="/yetkinlik/ıdeSil/@i.id" class="btn btn-warning">Sil</a></td>
+                <td><a href="/yetkinlik/ıdeGuncellemeSayfasi/@i.id" class="btn btn-success">Güncelle</a></td>
+
+            </tr>
+        }
+    </tbody>
+</table>
+<a href="/yetkinlik/ıdeEkle" class="btn btn-success">İde Ekle</a>
+
+@*Veri tabanı*@
+<h3>Deneyimlediğim Veri Tabanı Yönetim Sistemleri</h3>
+<table class="table table-bordered">
+    <tr>
+        <th>Id</th>
+        <th>Yetkinlik</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+
+    </tr>
+
+    <tbody>
+        @foreach (var i in Model.VeriTabaniYonetimSistemleri)
+        {
+            <tr>
+                <td>@i.id</td>
+                <td>@i.VeriTabanıSistemi</td>
+                <td><a href="/yetkinlik/veriTabaniSil/@i.id" class="btn btn-warning">Sil</a></td>
+                <td><a href="/yetkinlik/veriTabaniGuncellemeSayfasi/@i.id" class="btn btn-success">Güncelle</a></td>
+
+            </tr>
+        }
+    </tbody>
+</table>
+<a href="/yetkinlik/veriTabaniEkle" class="btn btn-success">Veri Tabanı Ekle</a>
+
+@*Frameworkler*@
+<h3>Deneyimlediğim Frameworkler</h3>
+<table class="table table-bordered">
+    <tr>
+        <th>Id</th>
+        <th>Yetkinlik</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+
+    </tr>
+
+    <tbody>
+        @foreach (var i in Model.frameworkler)
+        {
+            <tr>
+                <td>@i.id</td>
+                <td>@i.framework</td>
+                <td><a href="/yetkinlik/frameworkSil/@i.id" class="btn btn-warning">Sil</a></td>
+                <td><a href="/yetkinlik/frameworkGuncellemeSayfasi/@i.id" class="btn btn-success">Güncelle</a></td>
+
+            </tr>
+        }
+    </tbody>
+</table>
+<a href="/yetkinlik/frameworkEkle" class="btn btn-success">Framework Ekle</a>
+

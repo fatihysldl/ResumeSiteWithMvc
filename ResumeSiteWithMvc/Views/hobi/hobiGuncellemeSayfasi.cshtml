@@ -1,0 +1,21 @@
+﻿@model ResumeSiteWithMvc.Models.entity.tblHobilerim
+@{
+    ViewBag.Title = "hobiGuncellemeSayfasi";
+    Layout = "~/Views/Shared/_adminLayout.cshtml";
+}
+
+<h2>hobiGuncellemeSayfasi</h2>
+
+@using (Html.BeginForm("hobiGuncellemeSayfasi", "hobi", FormMethod.Post))
+{
+    <div class="form-group">
+        <label>Hobi Giriniz</label>
+        @Html.TextBoxFor(i => i.hobi, new { @class = "form-control" })
+    </div>
+    <button class="btn btn-primary">Hobi Güncelle</button>
+    @Html.HiddenFor(i => i.ıd)
+
+}
+
+
+

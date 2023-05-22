@@ -1,0 +1,47 @@
+﻿@model ResumeSiteWithMvc.Models.entity.tblHakkimda
+@{
+    ViewBag.Title = "hakkimdaEkle";
+    Layout = "~/Views/Shared/_adminLayout.cshtml";
+}
+
+<h2>hakkimdaEkle</h2>
+
+@using (Html.BeginForm("hakkimdaEkle", "hakkimda", FormMethod.Post))
+{
+    <div>
+        <label>Ad</label>
+        @Html.TextBoxFor(i => i.ad, new { @class = "form-control" })
+        @Html.ValidationMessageFor(i => i.ad, "", new { @style = "color:red;" })
+    </div>
+    <div>
+        <label>Soyad</label>
+        @Html.TextBoxFor(i => i.soyad, new { @class = "form-control" })
+        @Html.ValidationMessageFor(i => i.soyad, "", new { @style = "color:red;" })
+    </div>
+    <div>
+        <label>Adres</label>
+        @Html.TextBoxFor(i => i.adres, new { @class = "form-control" })
+        @Html.ValidationMessageFor(i => i.adres, "", new { @style = "color:red;" })
+    </div>
+    <div>
+        <label>Telefon</label>
+        @Html.TextBoxFor(i => i.telefon, new { @class = "form-control" })
+        @Html.ValidationMessageFor(i => i.telefon, "", new { @style = "color:red;" })
+    </div>
+    <div>
+        <label>Mail</label>
+        @Html.TextBoxFor(i => i.mail, new { @class = "form-control" })
+        @Html.ValidationMessageFor(i => i.mail, "", new { @style = "color:red;" })
+    </div>
+    <div>
+        <label>Açıklama</label>
+        @Html.TextBoxFor(i => i.aciklama, new { @class = "form-control" })
+        @Html.ValidationMessageFor(i => i.aciklama, "", new { @style = "color:red;" })
+    </div>
+    <div>
+        <label>Fotoğraf</label>
+        @Html.TextBoxFor(i => i.fotograf, new { @class = "form-control" })
+    </div>
+    <button class="btn btn-primary">Hakkımda Ekle</button>
+    @Html.HiddenFor(i => i.Id)
+}

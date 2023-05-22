@@ -1,0 +1,30 @@
+﻿@model ResumeSiteWithMvc.Models.entity.tblDeneyimlerim
+@{
+    ViewBag.Title = "deneyimEkle";
+    Layout = "~/Views/Shared/_adminLayout.cshtml";
+}
+
+@using (Html.BeginForm("deneyimEkle", "deneyim", FormMethod.Post))
+{
+    <div>
+        <label>Başlık</label>
+        @Html.TextBoxFor(i => i.baslik, new { @class = "form-control" })
+        @Html.ValidationMessageFor(i=>i.baslik, "", new {@style="color:red;"} )
+    </div>
+    <div>
+        <label>Alt Başlık</label>
+        @Html.TextBoxFor(i => i.altBaslik, new { @class = "form-control" })
+        @Html.ValidationMessageFor(i => i.altBaslik, "", new { @style = "color:red;" })
+    </div>
+    <div>
+        <label>Açıklma</label>
+        @Html.TextBoxFor(i => i.aciklama, new { @class = "form-control" })
+        @Html.ValidationMessageFor(i => i.aciklama, "", new { @style = "color:red;" })
+    </div>
+    <div>
+        <label>Tarih</label>
+        @Html.TextBoxFor(i => i.tarih, new { @class = "form-control" })
+    </div>
+    <button class="btn btn-primary">Deneyim Ekle</button>
+    @Html.HiddenFor(i=>i.ıd)
+}

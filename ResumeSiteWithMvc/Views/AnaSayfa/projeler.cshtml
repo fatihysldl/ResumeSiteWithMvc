@@ -1,0 +1,18 @@
+﻿@using ResumeSiteWithMvc.Models.entity
+@model List<tblProjeler>
+@{
+    Layout = null;
+}
+
+<div class="resume-section-content">
+    <h2 class="mb-5">Projeler</h2>
+    <ul class="fa-ul mb-0">
+        @foreach (var i in Model)
+        {
+            <li>
+                <span class="fa-li"><i class="fas fa-trophy text-warning"></i></span>
+                @i.Proje
+            </li>
+        }
+    </ul>
+</div>

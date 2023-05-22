@@ -1,0 +1,20 @@
+﻿@model ResumeSiteWithMvc.Models.entity.tblProgramlamaDilleri
+@{
+    ViewBag.Title = "programlamaEkle";
+    Layout = "~/Views/Shared/_adminLayout.cshtml";
+}
+
+<h2>programlama Ekle</h2>
+
+@using (Html.BeginForm("programlamaEkle", "yetkinlik", FormMethod.Post))
+{
+    <div class="form-group">
+        <label>Programlama Dili Giriniz</label>
+        @Html.TextBoxFor(i => i.programlamaDilleri, new { @class = "form-control" })
+        @Html.ValidationMessageFor(i => i.programlamaDilleri, "", new { @style = "color:red;" })
+    </div>
+    <button class="btn btn-primary">Programlama Ekle</button>
+    @Html.HiddenFor(i => i.ıd)
+
+}
+

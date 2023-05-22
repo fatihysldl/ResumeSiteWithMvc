@@ -1,0 +1,38 @@
+﻿@using ResumeSiteWithMvc.Models.entity
+@model List<tblEğitimleri>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_adminLayout.cshtml";
+}
+
+<h2>Index</h2>
+
+<table class=" table table-bordered">
+    <tr>
+        <th>Id</th>
+        <th>Başlık</th>
+        <th>Alt Başlık</th>
+        <th>Alt Baslık 2</th>
+        <th>Not Ortalaması</th>
+        <th>Tarih</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+    </tr>
+    <tbody>
+        @foreach(var i in Model)
+            {
+                <tr>
+                    <td>@i.ıd</td>
+                    <td>@i.baslik</td>
+                    <td>@i.altBaslik</td>
+                    <td>@i.altBaslik1</td>
+                    <td>@i.notOrtalamasi</td>
+                    <td>@i.tarih</td>
+                    <td><a href="/egitim/egitimSil/@i.ıd" class="btn btn-warning" >Sil</a></td>
+                    <td><a href="/egitim/egitimGuncellemeSayfasi/@i.ıd" class="btn btn-success">Güncelle</a></td>
+                </tr>
+            }
+    </tbody>
+</table>
+
+<a href="/egitim/egitimEkle" class="btn btn-primary">Eğitim Ekle</a>

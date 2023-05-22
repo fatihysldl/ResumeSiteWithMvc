@@ -1,0 +1,19 @@
+﻿@model ResumeSiteWithMvc.Models.entity.tblFramework
+@{
+    ViewBag.Title = "frameworkGuncellemeSayfasi";
+    Layout = "~/Views/Shared/_adminLayout.cshtml";
+}
+
+<h2>framework Guncelleme Sayfasi</h2>
+
+@using (Html.BeginForm("frameworkGuncellemeSayfasi", "yetkinlik", FormMethod.Post))
+{
+    <div class="form-group">
+        <label>framework Giriniz</label>
+        @Html.TextBoxFor(i => i.framework, new { @class = "form-control" })
+    </div>
+    <button class="bnt btn-primary">Framework Ekle</button>
+    @Html.HiddenFor(i => i.id)
+
+}
+

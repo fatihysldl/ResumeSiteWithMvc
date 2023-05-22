@@ -1,0 +1,18 @@
+﻿@model ResumeSiteWithMvc.Models.entity.tblIde
+@{
+    ViewBag.Title = "ıdeGuncellemeSayfasi";
+    Layout = "~/Views/Shared/_adminLayout.cshtml";
+}
+
+<h2>ıde Guncelleme Sayfasi</h2>
+
+@using (Html.BeginForm("ıdeGuncellemeSayfasi", "yetkinlik", FormMethod.Post))
+{
+    <div class="form-group">
+        <label>ıde Giriniz</label>
+        @Html.TextBoxFor(i => i.ide, new { @class = "form-control" })
+    </div>
+    <button class="btn btn-primary">Ide Ekle</button>
+    @Html.HiddenFor(i => i.id)
+}
+
